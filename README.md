@@ -10,3 +10,12 @@ Then, you want to specify the areas. As already mentioned, I don't know how WinF
 When the board has been created, you can simply start running the algorithms. The Run One-button runs the remove-algorithms 10 times and then the first Set-algorithm. After that the Remove-algorithms again and then the other Set-algorithm.
 
 Contact me if there are boards not solvable and I'll add more algorithms. When doing these myself manually, I have many times seen that I have to se a square to a specific value - otherwise the board is not uniquely solved. When developing this though, I have not encountered this...
+
+# Save/Load
+It is also possible to save a grid. Hit Save-button when you have created the grid... it is saved to c:\Temp\Grid.json.
+You can then re-load the same grid by hitting the Load-button.
+
+This "feature" can be cool to use if you want to experiment with the agorithms.
+
+Note!! You can NOT use hit the Set-buttons after each other. You need to run the Remove-algorithms first!
+
