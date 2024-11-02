@@ -93,7 +93,7 @@ namespace TectonicApp
         private void button1_Click(object sender, EventArgs e)
         {
             _areaIndex++;
-
+            labelNextColor.BackColor = _colors[_areaIndex + 1];
         }
 
         private void buttonAreaCount_Click(object sender, EventArgs e)
