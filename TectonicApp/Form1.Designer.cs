@@ -49,6 +49,7 @@
             textBoxHeight = new TextBox();
             buttonCreateBoard = new Button();
             buttonSave = new Button();
+            buttonLoad = new Button();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             SuspendLayout();
             // 
@@ -254,11 +255,22 @@
             buttonSave.UseVisualStyleBackColor = true;
             buttonSave.Click += buttonSave_Click;
             // 
+            // buttonLoad
+            // 
+            buttonLoad.Location = new Point(673, 41);
+            buttonLoad.Name = "buttonLoad";
+            buttonLoad.Size = new Size(75, 23);
+            buttonLoad.TabIndex = 25;
+            buttonLoad.Text = "Load";
+            buttonLoad.UseVisualStyleBackColor = true;
+            buttonLoad.Click += buttonLoad_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1095, 836);
+            Controls.Add(buttonLoad);
             Controls.Add(buttonSave);
             Controls.Add(buttonCreateBoard);
             Controls.Add(label3);
@@ -307,5 +319,6 @@
         public TextBox textBoxHeight;
         private Button buttonCreateBoard;
         private Button buttonSave;
+        private Button buttonLoad;
     }
 }

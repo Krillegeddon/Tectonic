@@ -157,7 +157,6 @@ namespace TectonicApp
         private void buttonCreateBoard_Click(object sender, EventArgs e)
         {
             _grid = new Grid(int.Parse(textBoxWidth.Text), int.Parse(textBoxHeight.Text));
-
             for (int x = 0; x < _grid.Width; x++)
             {
                 for (int y = 0; y < _grid.Height; y++)
@@ -174,6 +173,21 @@ namespace TectonicApp
         {
             var jsonstring = JsonSerializer.Serialize(_grid);
             File.WriteAllText("c:\\Temp\\Grid.json", jsonstring);
+        }
+
+        private void buttonLoad_Click(object sender, EventArgs e)
+        {
+            _grid = JsonSerializer.Deserialize<Grid>(File.ReadAllText("c:\\Temp\\Grid.json"));
+            for (int x = 0; x < _grid.Width; x++)
+            {
+                for (int y = 0; y < _grid.Height; y++)
+                {
+                    var cc = new SquareCpt(this, x, y, _grid.GetSquare(x, y));
+                    tableGrid.Controls.Add(cc, x, y);
+                    _squareComponents.Add(cc);
+                    cc.Repaint();
+                }
+            }
         }
     }
 }
