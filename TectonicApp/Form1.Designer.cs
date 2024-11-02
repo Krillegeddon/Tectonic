@@ -42,12 +42,19 @@
             buttonSetOnlySqInAreaHavingThisNumber = new Button();
             buttonOneNumberInAnAreaChokesAdjacentCellsInOtherAreas = new Button();
             buttonRunOne = new Button();
+            label1 = new Label();
+            label2 = new Label();
+            textBoxWidth = new TextBox();
+            label3 = new Label();
+            textBoxHeight = new TextBox();
+            buttonCreateBoard = new Button();
+            buttonSave = new Button();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             SuspendLayout();
             // 
             // tableGrid
             // 
-            tableGrid.ColumnCount = 8;
+            tableGrid.ColumnCount = 13;
             tableGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
             tableGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
             tableGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
@@ -56,9 +63,14 @@
             tableGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
             tableGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
             tableGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
-            tableGrid.Location = new Point(34, 63);
+            tableGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
+            tableGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
+            tableGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
+            tableGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
+            tableGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
+            tableGrid.Location = new Point(32, 126);
             tableGrid.Name = "tableGrid";
-            tableGrid.RowCount = 8;
+            tableGrid.RowCount = 12;
             tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
             tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
             tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
@@ -67,7 +79,11 @@
             tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
             tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
             tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
-            tableGrid.Size = new Size(480, 480);
+            tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
+            tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
+            tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
+            tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
+            tableGrid.Size = new Size(788, 712);
             tableGrid.TabIndex = 5;
             // 
             // labelDebug
@@ -82,7 +98,7 @@
             // labelNextColor
             // 
             labelNextColor.AutoSize = true;
-            labelNextColor.Location = new Point(68, 16);
+            labelNextColor.Location = new Point(33, 96);
             labelNextColor.Name = "labelNextColor";
             labelNextColor.Size = new Size(62, 15);
             labelNextColor.TabIndex = 7;
@@ -90,7 +106,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(136, 12);
+            button1.Location = new Point(101, 92);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 8;
@@ -100,14 +116,14 @@
             // 
             // textBoxNumber
             // 
-            textBoxNumber.Location = new Point(310, 17);
+            textBoxNumber.Location = new Point(461, 92);
             textBoxNumber.Name = "textBoxNumber";
             textBoxNumber.Size = new Size(35, 23);
             textBoxNumber.TabIndex = 9;
             // 
             // buttonAreaCount
             // 
-            buttonAreaCount.Location = new Point(559, 234);
+            buttonAreaCount.Location = new Point(881, 88);
             buttonAreaCount.Name = "buttonAreaCount";
             buttonAreaCount.Size = new Size(202, 27);
             buttonAreaCount.TabIndex = 10;
@@ -117,7 +133,7 @@
             // 
             // buttonAdjacent
             // 
-            buttonAdjacent.Location = new Point(560, 265);
+            buttonAdjacent.Location = new Point(882, 119);
             buttonAdjacent.Name = "buttonAdjacent";
             buttonAdjacent.Size = new Size(201, 23);
             buttonAdjacent.TabIndex = 11;
@@ -127,7 +143,7 @@
             // 
             // buttonRemoveSameArea
             // 
-            buttonRemoveSameArea.Location = new Point(560, 294);
+            buttonRemoveSameArea.Location = new Point(882, 148);
             buttonRemoveSameArea.Name = "buttonRemoveSameArea";
             buttonRemoveSameArea.Size = new Size(201, 23);
             buttonRemoveSameArea.TabIndex = 12;
@@ -137,7 +153,7 @@
             // 
             // buttonSetOnlyOption
             // 
-            buttonSetOnlyOption.Location = new Point(782, 234);
+            buttonSetOnlyOption.Location = new Point(884, 308);
             buttonSetOnlyOption.Name = "buttonSetOnlyOption";
             buttonSetOnlyOption.Size = new Size(199, 23);
             buttonSetOnlyOption.TabIndex = 13;
@@ -147,7 +163,7 @@
             // 
             // buttonSetOnlySqInAreaHavingThisNumber
             // 
-            buttonSetOnlySqInAreaHavingThisNumber.Location = new Point(783, 263);
+            buttonSetOnlySqInAreaHavingThisNumber.Location = new Point(885, 337);
             buttonSetOnlySqInAreaHavingThisNumber.Name = "buttonSetOnlySqInAreaHavingThisNumber";
             buttonSetOnlySqInAreaHavingThisNumber.Size = new Size(198, 41);
             buttonSetOnlySqInAreaHavingThisNumber.TabIndex = 15;
@@ -157,7 +173,7 @@
             // 
             // buttonOneNumberInAnAreaChokesAdjacentCellsInOtherAreas
             // 
-            buttonOneNumberInAnAreaChokesAdjacentCellsInOtherAreas.Location = new Point(559, 323);
+            buttonOneNumberInAnAreaChokesAdjacentCellsInOtherAreas.Location = new Point(881, 177);
             buttonOneNumberInAnAreaChokesAdjacentCellsInOtherAreas.Name = "buttonOneNumberInAnAreaChokesAdjacentCellsInOtherAreas";
             buttonOneNumberInAnAreaChokesAdjacentCellsInOtherAreas.Size = new Size(202, 41);
             buttonOneNumberInAnAreaChokesAdjacentCellsInOtherAreas.TabIndex = 16;
@@ -167,7 +183,7 @@
             // 
             // buttonRunOne
             // 
-            buttonRunOne.Location = new Point(560, 116);
+            buttonRunOne.Location = new Point(882, 16);
             buttonRunOne.Name = "buttonRunOne";
             buttonRunOne.Size = new Size(75, 23);
             buttonRunOne.TabIndex = 17;
@@ -175,11 +191,81 @@
             buttonRunOne.UseVisualStyleBackColor = true;
             buttonRunOne.Click += buttonRunOne_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(217, 96);
+            label1.Name = "label1";
+            label1.Size = new Size(238, 15);
+            label1.TabIndex = 18;
+            label1.Text = "Set known value (click in the grid to assign):";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(34, 16);
+            label2.Name = "label2";
+            label2.Size = new Size(42, 15);
+            label2.TabIndex = 20;
+            label2.Text = "Width:";
+            // 
+            // textBoxWidth
+            // 
+            textBoxWidth.Location = new Point(82, 12);
+            textBoxWidth.Name = "textBoxWidth";
+            textBoxWidth.Size = new Size(35, 23);
+            textBoxWidth.TabIndex = 19;
+            textBoxWidth.Text = "8";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(127, 16);
+            label3.Name = "label3";
+            label3.Size = new Size(46, 15);
+            label3.TabIndex = 22;
+            label3.Text = "Height:";
+            // 
+            // textBoxHeight
+            // 
+            textBoxHeight.Location = new Point(179, 12);
+            textBoxHeight.Name = "textBoxHeight";
+            textBoxHeight.Size = new Size(35, 23);
+            textBoxHeight.TabIndex = 21;
+            textBoxHeight.Text = "8";
+            // 
+            // buttonCreateBoard
+            // 
+            buttonCreateBoard.Location = new Point(240, 12);
+            buttonCreateBoard.Name = "buttonCreateBoard";
+            buttonCreateBoard.Size = new Size(91, 23);
+            buttonCreateBoard.TabIndex = 23;
+            buttonCreateBoard.Text = "Create board";
+            buttonCreateBoard.UseVisualStyleBackColor = true;
+            buttonCreateBoard.Click += buttonCreateBoard_Click;
+            // 
+            // buttonSave
+            // 
+            buttonSave.Location = new Point(673, 12);
+            buttonSave.Name = "buttonSave";
+            buttonSave.Size = new Size(75, 23);
+            buttonSave.TabIndex = 24;
+            buttonSave.Text = "Save";
+            buttonSave.UseVisualStyleBackColor = true;
+            buttonSave.Click += buttonSave_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1004, 562);
+            ClientSize = new Size(1095, 836);
+            Controls.Add(buttonSave);
+            Controls.Add(buttonCreateBoard);
+            Controls.Add(label3);
+            Controls.Add(textBoxHeight);
+            Controls.Add(label2);
+            Controls.Add(textBoxWidth);
+            Controls.Add(label1);
             Controls.Add(buttonRunOne);
             Controls.Add(buttonOneNumberInAnAreaChokesAdjacentCellsInOtherAreas);
             Controls.Add(buttonSetOnlySqInAreaHavingThisNumber);
@@ -214,5 +300,12 @@
         private Button buttonSetOnlySqInAreaHavingThisNumber;
         private Button buttonOneNumberInAnAreaChokesAdjacentCellsInOtherAreas;
         private Button buttonRunOne;
+        private Label label1;
+        private Label label2;
+        public TextBox textBoxWidth;
+        private Label label3;
+        public TextBox textBoxHeight;
+        private Button buttonCreateBoard;
+        private Button buttonSave;
     }
 }

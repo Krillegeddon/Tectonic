@@ -28,6 +28,30 @@ namespace TectonicApp
             Color.Beige, Color.Bisque,
             Color.LightBlue, Color.Pink, Color.LightGreen, Color.LightGray,
             Color.Beige, Color.Bisque,
+            Color.LightBlue, Color.Pink, Color.LightGreen, Color.LightGray,
+            Color.Beige, Color.Bisque,
+            Color.LightBlue, Color.Pink, Color.LightGreen, Color.LightGray,
+            Color.Beige, Color.Bisque,
+            Color.LightBlue, Color.Pink, Color.LightGreen, Color.LightGray,
+            Color.Beige, Color.Bisque,
+            Color.LightBlue, Color.Pink, Color.LightGreen, Color.LightGray,
+            Color.Beige, Color.Bisque,
+            Color.LightBlue, Color.Pink, Color.LightGreen, Color.LightGray,
+            Color.Beige, Color.Bisque,
+            Color.LightBlue, Color.Pink, Color.LightGreen, Color.LightGray,
+            Color.Beige, Color.Bisque,
+            Color.LightBlue, Color.Pink, Color.LightGreen, Color.LightGray,
+            Color.Beige, Color.Bisque,
+            Color.LightBlue, Color.Pink, Color.LightGreen, Color.LightGray,
+            Color.Beige, Color.Bisque,
+            Color.LightBlue, Color.Pink, Color.LightGreen, Color.LightGray,
+            Color.Beige, Color.Bisque,
+            Color.LightBlue, Color.Pink, Color.LightGreen, Color.LightGray,
+            Color.Beige, Color.Bisque,
+            Color.LightBlue, Color.Pink, Color.LightGreen, Color.LightGray,
+            Color.Beige, Color.Bisque,
+            Color.LightBlue, Color.Pink, Color.LightGreen, Color.LightGray,
+            Color.Beige, Color.Bisque,
         };
 
         public List<SquareCpt> _squareComponents = new List<SquareCpt>();
@@ -54,22 +78,6 @@ namespace TectonicApp
             }
         }
 
-        private void buttonCreate_Click(object sender, EventArgs e)
-        {
-            _grid = new Grid(8, 8);
-
-            for (int x = 0; x < _grid.Width; x++)
-            {
-                for (int y = 0; y < _grid.Height; y++)
-                {
-                    var cc = new SquareCpt(this, x, y, _grid.GetSquare(x, y));
-                    tableGrid.Controls.Add(cc, x, y);
-                    _squareComponents.Add(cc);
-                    cc.Repaint();
-                }
-            }
-        }
-
         public void Repaint()
         {
             foreach (var cc in _squareComponents)
@@ -80,7 +88,6 @@ namespace TectonicApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            buttonCreate_Click(sender, e);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -145,6 +152,28 @@ namespace TectonicApp
             Remove();
             _grid.SetBecauseOnlySquareInAreaHavingThisNumber();
             Repaint();
+        }
+
+        private void buttonCreateBoard_Click(object sender, EventArgs e)
+        {
+            _grid = new Grid(int.Parse(textBoxWidth.Text), int.Parse(textBoxHeight.Text));
+
+            for (int x = 0; x < _grid.Width; x++)
+            {
+                for (int y = 0; y < _grid.Height; y++)
+                {
+                    var cc = new SquareCpt(this, x, y, _grid.GetSquare(x, y));
+                    tableGrid.Controls.Add(cc, x, y);
+                    _squareComponents.Add(cc);
+                    cc.Repaint();
+                }
+            }
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            var jsonstring = JsonSerializer.Serialize(_grid);
+            File.WriteAllText("c:\\Temp\\Grid.json", jsonstring);
         }
     }
 }
