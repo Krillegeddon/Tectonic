@@ -140,6 +140,7 @@ namespace TectonicApp
                 _grid.RemoveOptionsBasedOnAdjecantKnownNumbers();
                 _grid.RemoveOptionsBasedOnHavingKnownValueInSameArea();
                 _grid.RemoveOptionsOneNumberInAnAreaChokesAdjacentCellsInOtherAreas();
+                //_grid.APairWillChokeAllAdjacentCells();
             }
         }
 
@@ -188,6 +189,12 @@ namespace TectonicApp
                     cc.Repaint();
                 }
             }
+        }
+
+        private void buttonAPairWillChokeAllAdjacentCells_Click(object sender, EventArgs e)
+        {
+            _grid.APairWillChokeAllAdjacentCells();
+            Repaint();
         }
     }
 }

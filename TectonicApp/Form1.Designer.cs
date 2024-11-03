@@ -50,6 +50,7 @@
             buttonCreateBoard = new Button();
             buttonSave = new Button();
             buttonLoad = new Button();
+            buttonAPairWillChokeAllAdjacentCells = new Button();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             SuspendLayout();
             // 
@@ -265,11 +266,22 @@
             buttonLoad.UseVisualStyleBackColor = true;
             buttonLoad.Click += buttonLoad_Click;
             // 
+            // buttonAPairWillChokeAllAdjacentCells
+            // 
+            buttonAPairWillChokeAllAdjacentCells.Location = new Point(882, 222);
+            buttonAPairWillChokeAllAdjacentCells.Name = "buttonAPairWillChokeAllAdjacentCells";
+            buttonAPairWillChokeAllAdjacentCells.Size = new Size(201, 40);
+            buttonAPairWillChokeAllAdjacentCells.TabIndex = 26;
+            buttonAPairWillChokeAllAdjacentCells.Text = "Remove - a pair will choke all adjacent cells";
+            buttonAPairWillChokeAllAdjacentCells.UseVisualStyleBackColor = true;
+            buttonAPairWillChokeAllAdjacentCells.Click += buttonAPairWillChokeAllAdjacentCells_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1095, 836);
+            Controls.Add(buttonAPairWillChokeAllAdjacentCells);
             Controls.Add(buttonLoad);
             Controls.Add(buttonSave);
             Controls.Add(buttonCreateBoard);
@@ -320,5 +332,6 @@
         private Button buttonCreateBoard;
         private Button buttonSave;
         private Button buttonLoad;
+        private Button buttonAPairWillChokeAllAdjacentCells;
     }
 }

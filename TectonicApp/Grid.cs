@@ -245,5 +245,57 @@ namespace TectonicApp
 
             }
         }
+
+        private void RemoveOptionsFromSquare(Square square, List<int> numbersToRemove)
+        {
+            foreach (var nn in square.ValidNumbers.ToList())
+            {
+                if (numbersToRemove.Contains(nn))
+                    square.ValidNumbers.Remove(nn);
+            }
+        }
+
+        internal void APairWillChokeAllAdjacentCells()
+        {
+            foreach (var s in Squares.Where(p => p.ValidNumbers.Count == 2).ToList())
+            {
+                var pairs = new List<Square>();
+
+                var adjs = GetAdjacentSquares(s).Where(p=> p != null && p.Number == 0).ToList();
+                foreach (var adj in adjs)
+                {
+                    if (adj.ValidNumbers.Count != s.ValidNumbers.Count)
+                        continue;
+                    for (var ix = 0; ix < s.ValidNumbers.Count; ix++)
+                    {
+                        if (adj.ValidNumbers[ix] != s.ValidNumbers[ix])
+                            goto notSame;
+                    }
+
+                    // We have a pair! Let's check all adjacent cells to these guys and remove these two numbers!
+                    pairs.Add(adj);
+
+                notSame:
+                    int bb = 9;
+
+                }
+
+                foreach (var possiblePair in pairs)
+                {
+                    var list = new List<Square>()
+                    {
+                        s, possiblePair
+                    };
+                    var pairAdj = GetAdjacentToMultiple(list);
+
+                    // We found adjecent cells to this pair! Remove the two number as valid numbers on them!
+                    foreach (var ss in pairAdj)
+                    {
+                        RemoveOptionsFromSquare(ss, s.ValidNumbers);
+                    }
+                }
+            }
+
+        }
     }
 }
