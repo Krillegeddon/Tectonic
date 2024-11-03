@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Windows.Forms;
 using TectonicApp.Controls;
 
 namespace TectonicApp
@@ -156,40 +157,60 @@ namespace TectonicApp
             Repaint();
         }
 
-        private void buttonCreateBoard_Click(object sender, EventArgs e)
-        {
-            _grid = new Grid(int.Parse(textBoxWidth.Text), int.Parse(textBoxHeight.Text));
-            for (int x = 0; x < _grid.Width; x++)
-            {
-                for (int y = 0; y < _grid.Height; y++)
-                {
-                    var cc = new SquareCpt(this, x, y, _grid.GetSquare(x, y));
-                    tableGrid.Controls.Add(cc, x, y);
-                    _squareComponents.Add(cc);
-                    cc.Repaint();
-                }
-            }
-        }
-
         private void buttonSave_Click(object sender, EventArgs e)
         {
             var jsonstring = JsonSerializer.Serialize(_grid);
             File.WriteAllText("c:\\Temp\\Grid.json", jsonstring);
         }
 
-        private void buttonLoad_Click(object sender, EventArgs e)
+        private void SetupGrid()
         {
-            _grid = JsonSerializer.Deserialize<Grid>(File.ReadAllText("c:\\Temp\\Grid.json"));
+            // Förutsätter att TableLayoutPanel redan finns, t.ex. 'tableLayoutPanel1'
+            tableGrid.RowCount = _grid.Height;
+            tableGrid.ColumnCount = _grid.Width;
+
+            // Rensa befintliga rader och kolumner om några finns
+            tableGrid.RowStyles.Clear();
+            tableGrid.ColumnStyles.Clear();
+
+            // Lägg till kolumner
+            for (int i = 0; i < tableGrid.ColumnCount; i++)
+            {
+                tableGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F)); // 60 pixels wide
+            }
+
+            // Lägg till rader
+            for (int i = 0; i < tableGrid.RowCount; i++)
+            {
+                tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F)); // 60 pixels high
+            }
+
+            tableGrid.Width = _grid.Width * 60;
+            tableGrid.Height = _grid.Height * 60;
+
             for (int x = 0; x < _grid.Width; x++)
             {
                 for (int y = 0; y < _grid.Height; y++)
                 {
                     var cc = new SquareCpt(this, x, y, _grid.GetSquare(x, y));
+                    cc.Dock = DockStyle.Fill;
                     tableGrid.Controls.Add(cc, x, y);
                     _squareComponents.Add(cc);
                     cc.Repaint();
                 }
             }
+        }
+
+        private void buttonCreateBoard_Click(object sender, EventArgs e)
+        {
+            _grid = new Grid(int.Parse(textBoxWidth.Text), int.Parse(textBoxHeight.Text));
+            SetupGrid();
+        }
+
+        private void buttonLoad_Click(object sender, EventArgs e)
+        {
+            _grid = JsonSerializer.Deserialize<Grid>(File.ReadAllText("c:\\Temp\\Grid.json"));
+            SetupGrid();
         }
 
         private void buttonAPairWillChokeAllAdjacentCells_Click(object sender, EventArgs e)

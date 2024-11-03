@@ -51,50 +51,39 @@
             buttonSave = new Button();
             buttonLoad = new Button();
             buttonAPairWillChokeAllAdjacentCells = new Button();
+            panel1 = new Panel();
+            panel2 = new Panel();
+            splitContainer1 = new SplitContainer();
+            splitContainer2 = new SplitContainer();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+            splitContainer1.Panel1.SuspendLayout();
+            splitContainer1.Panel2.SuspendLayout();
+            splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer2).BeginInit();
+            splitContainer2.Panel1.SuspendLayout();
+            splitContainer2.Panel2.SuspendLayout();
+            splitContainer2.SuspendLayout();
             SuspendLayout();
             // 
             // tableGrid
             // 
-            tableGrid.ColumnCount = 14;
+            tableGrid.ColumnCount = 1;
             tableGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
-            tableGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
-            tableGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
-            tableGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
-            tableGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
-            tableGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
-            tableGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
-            tableGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
-            tableGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
-            tableGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
-            tableGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
-            tableGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
-            tableGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
-            tableGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
-            tableGrid.Location = new Point(32, 126);
+            tableGrid.Location = new Point(0, 0);
             tableGrid.Name = "tableGrid";
-            tableGrid.RowCount = 14;
+            tableGrid.RowCount = 1;
             tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
-            tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
-            tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
-            tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
-            tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
-            tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
-            tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
-            tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
-            tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
-            tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
-            tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
-            tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
-            tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
-            tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
-            tableGrid.Size = new Size(847, 844);
+            tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableGrid.Size = new Size(849, 829);
             tableGrid.TabIndex = 5;
             // 
             // labelDebug
             // 
             labelDebug.AutoSize = true;
-            labelDebug.Location = new Point(576, 61);
+            labelDebug.Location = new Point(558, 67);
             labelDebug.Name = "labelDebug";
             labelDebug.Size = new Size(16, 15);
             labelDebug.TabIndex = 6;
@@ -103,7 +92,7 @@
             // labelNextColor
             // 
             labelNextColor.AutoSize = true;
-            labelNextColor.Location = new Point(33, 96);
+            labelNextColor.Location = new Point(12, 55);
             labelNextColor.Name = "labelNextColor";
             labelNextColor.Size = new Size(62, 15);
             labelNextColor.TabIndex = 7;
@@ -111,7 +100,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(101, 92);
+            button1.Location = new Point(80, 51);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 8;
@@ -121,14 +110,14 @@
             // 
             // textBoxNumber
             // 
-            textBoxNumber.Location = new Point(461, 92);
+            textBoxNumber.Location = new Point(440, 51);
             textBoxNumber.Name = "textBoxNumber";
             textBoxNumber.Size = new Size(35, 23);
             textBoxNumber.TabIndex = 9;
             // 
             // buttonAreaCount
             // 
-            buttonAreaCount.Location = new Point(881, 88);
+            buttonAreaCount.Location = new Point(3, 44);
             buttonAreaCount.Name = "buttonAreaCount";
             buttonAreaCount.Size = new Size(202, 27);
             buttonAreaCount.TabIndex = 10;
@@ -138,7 +127,7 @@
             // 
             // buttonAdjacent
             // 
-            buttonAdjacent.Location = new Point(882, 119);
+            buttonAdjacent.Location = new Point(4, 75);
             buttonAdjacent.Name = "buttonAdjacent";
             buttonAdjacent.Size = new Size(201, 23);
             buttonAdjacent.TabIndex = 11;
@@ -148,7 +137,7 @@
             // 
             // buttonRemoveSameArea
             // 
-            buttonRemoveSameArea.Location = new Point(882, 148);
+            buttonRemoveSameArea.Location = new Point(4, 104);
             buttonRemoveSameArea.Name = "buttonRemoveSameArea";
             buttonRemoveSameArea.Size = new Size(201, 23);
             buttonRemoveSameArea.TabIndex = 12;
@@ -158,7 +147,7 @@
             // 
             // buttonSetOnlyOption
             // 
-            buttonSetOnlyOption.Location = new Point(884, 308);
+            buttonSetOnlyOption.Location = new Point(6, 264);
             buttonSetOnlyOption.Name = "buttonSetOnlyOption";
             buttonSetOnlyOption.Size = new Size(199, 23);
             buttonSetOnlyOption.TabIndex = 13;
@@ -168,7 +157,7 @@
             // 
             // buttonSetOnlySqInAreaHavingThisNumber
             // 
-            buttonSetOnlySqInAreaHavingThisNumber.Location = new Point(885, 337);
+            buttonSetOnlySqInAreaHavingThisNumber.Location = new Point(7, 293);
             buttonSetOnlySqInAreaHavingThisNumber.Name = "buttonSetOnlySqInAreaHavingThisNumber";
             buttonSetOnlySqInAreaHavingThisNumber.Size = new Size(198, 41);
             buttonSetOnlySqInAreaHavingThisNumber.TabIndex = 15;
@@ -178,7 +167,7 @@
             // 
             // buttonOneNumberInAnAreaChokesAdjacentCellsInOtherAreas
             // 
-            buttonOneNumberInAnAreaChokesAdjacentCellsInOtherAreas.Location = new Point(881, 177);
+            buttonOneNumberInAnAreaChokesAdjacentCellsInOtherAreas.Location = new Point(3, 133);
             buttonOneNumberInAnAreaChokesAdjacentCellsInOtherAreas.Name = "buttonOneNumberInAnAreaChokesAdjacentCellsInOtherAreas";
             buttonOneNumberInAnAreaChokesAdjacentCellsInOtherAreas.Size = new Size(202, 41);
             buttonOneNumberInAnAreaChokesAdjacentCellsInOtherAreas.TabIndex = 16;
@@ -188,7 +177,7 @@
             // 
             // buttonRunOne
             // 
-            buttonRunOne.Location = new Point(882, 16);
+            buttonRunOne.Location = new Point(3, 3);
             buttonRunOne.Name = "buttonRunOne";
             buttonRunOne.Size = new Size(75, 23);
             buttonRunOne.TabIndex = 17;
@@ -199,7 +188,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(217, 96);
+            label1.Location = new Point(196, 55);
             label1.Name = "label1";
             label1.Size = new Size(238, 15);
             label1.TabIndex = 18;
@@ -208,7 +197,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(34, 16);
+            label2.Location = new Point(16, 22);
             label2.Name = "label2";
             label2.Size = new Size(42, 15);
             label2.TabIndex = 20;
@@ -216,7 +205,7 @@
             // 
             // textBoxWidth
             // 
-            textBoxWidth.Location = new Point(82, 12);
+            textBoxWidth.Location = new Point(64, 18);
             textBoxWidth.Name = "textBoxWidth";
             textBoxWidth.Size = new Size(35, 23);
             textBoxWidth.TabIndex = 19;
@@ -225,7 +214,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(127, 16);
+            label3.Location = new Point(109, 22);
             label3.Name = "label3";
             label3.Size = new Size(46, 15);
             label3.TabIndex = 22;
@@ -233,7 +222,7 @@
             // 
             // textBoxHeight
             // 
-            textBoxHeight.Location = new Point(179, 12);
+            textBoxHeight.Location = new Point(161, 18);
             textBoxHeight.Name = "textBoxHeight";
             textBoxHeight.Size = new Size(35, 23);
             textBoxHeight.TabIndex = 21;
@@ -241,7 +230,7 @@
             // 
             // buttonCreateBoard
             // 
-            buttonCreateBoard.Location = new Point(240, 12);
+            buttonCreateBoard.Location = new Point(222, 18);
             buttonCreateBoard.Name = "buttonCreateBoard";
             buttonCreateBoard.Size = new Size(91, 23);
             buttonCreateBoard.TabIndex = 23;
@@ -251,7 +240,7 @@
             // 
             // buttonSave
             // 
-            buttonSave.Location = new Point(673, 12);
+            buttonSave.Location = new Point(655, 18);
             buttonSave.Name = "buttonSave";
             buttonSave.Size = new Size(75, 23);
             buttonSave.TabIndex = 24;
@@ -261,7 +250,7 @@
             // 
             // buttonLoad
             // 
-            buttonLoad.Location = new Point(673, 41);
+            buttonLoad.Location = new Point(655, 47);
             buttonLoad.Name = "buttonLoad";
             buttonLoad.Size = new Size(75, 23);
             buttonLoad.TabIndex = 25;
@@ -271,7 +260,7 @@
             // 
             // buttonAPairWillChokeAllAdjacentCells
             // 
-            buttonAPairWillChokeAllAdjacentCells.Location = new Point(881, 224);
+            buttonAPairWillChokeAllAdjacentCells.Location = new Point(3, 180);
             buttonAPairWillChokeAllAdjacentCells.Name = "buttonAPairWillChokeAllAdjacentCells";
             buttonAPairWillChokeAllAdjacentCells.Size = new Size(201, 40);
             buttonAPairWillChokeAllAdjacentCells.TabIndex = 26;
@@ -279,38 +268,99 @@
             buttonAPairWillChokeAllAdjacentCells.UseVisualStyleBackColor = true;
             buttonAPairWillChokeAllAdjacentCells.Click += buttonAPairWillChokeAllAdjacentCells_Click;
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(buttonRunOne);
+            panel1.Controls.Add(buttonAPairWillChokeAllAdjacentCells);
+            panel1.Controls.Add(buttonAreaCount);
+            panel1.Controls.Add(buttonAdjacent);
+            panel1.Controls.Add(buttonRemoveSameArea);
+            panel1.Controls.Add(buttonSetOnlyOption);
+            panel1.Controls.Add(buttonSetOnlySqInAreaHavingThisNumber);
+            panel1.Controls.Add(buttonOneNumberInAnAreaChokesAdjacentCellsInOtherAreas);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(242, 887);
+            panel1.TabIndex = 28;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(buttonLoad);
+            panel2.Controls.Add(labelDebug);
+            panel2.Controls.Add(labelNextColor);
+            panel2.Controls.Add(button1);
+            panel2.Controls.Add(buttonSave);
+            panel2.Controls.Add(textBoxNumber);
+            panel2.Controls.Add(buttonCreateBoard);
+            panel2.Controls.Add(label1);
+            panel2.Controls.Add(label3);
+            panel2.Controls.Add(textBoxWidth);
+            panel2.Controls.Add(textBoxHeight);
+            panel2.Controls.Add(label2);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1095, 91);
+            panel2.TabIndex = 29;
+            // 
+            // splitContainer1
+            // 
+            splitContainer1.Dock = DockStyle.Fill;
+            splitContainer1.Location = new Point(0, 0);
+            splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            splitContainer1.Panel1.Controls.Add(tableGrid);
+            // 
+            // splitContainer1.Panel2
+            // 
+            splitContainer1.Panel2.Controls.Add(panel1);
+            splitContainer1.Size = new Size(1095, 887);
+            splitContainer1.SplitterDistance = 849;
+            splitContainer1.TabIndex = 30;
+            // 
+            // splitContainer2
+            // 
+            splitContainer2.Dock = DockStyle.Fill;
+            splitContainer2.Location = new Point(0, 0);
+            splitContainer2.Name = "splitContainer2";
+            splitContainer2.Orientation = Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            splitContainer2.Panel1.Controls.Add(panel2);
+            // 
+            // splitContainer2.Panel2
+            // 
+            splitContainer2.Panel2.Controls.Add(splitContainer1);
+            splitContainer2.Size = new Size(1095, 982);
+            splitContainer2.SplitterDistance = 91;
+            splitContainer2.TabIndex = 31;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1095, 982);
-            Controls.Add(buttonAPairWillChokeAllAdjacentCells);
-            Controls.Add(buttonLoad);
-            Controls.Add(buttonSave);
-            Controls.Add(buttonCreateBoard);
-            Controls.Add(label3);
-            Controls.Add(textBoxHeight);
-            Controls.Add(label2);
-            Controls.Add(textBoxWidth);
-            Controls.Add(label1);
-            Controls.Add(buttonRunOne);
-            Controls.Add(buttonOneNumberInAnAreaChokesAdjacentCellsInOtherAreas);
-            Controls.Add(buttonSetOnlySqInAreaHavingThisNumber);
-            Controls.Add(buttonSetOnlyOption);
-            Controls.Add(buttonRemoveSameArea);
-            Controls.Add(buttonAdjacent);
-            Controls.Add(buttonAreaCount);
-            Controls.Add(textBoxNumber);
-            Controls.Add(button1);
-            Controls.Add(labelNextColor);
-            Controls.Add(labelDebug);
-            Controls.Add(tableGrid);
+            Controls.Add(splitContainer2);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
+            panel1.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            splitContainer1.Panel1.ResumeLayout(false);
+            splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
+            splitContainer1.ResumeLayout(false);
+            splitContainer2.Panel1.ResumeLayout(false);
+            splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer2).EndInit();
+            splitContainer2.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -336,5 +386,9 @@
         private Button buttonSave;
         private Button buttonLoad;
         private Button buttonAPairWillChokeAllAdjacentCells;
+        private Panel panel1;
+        private Panel panel2;
+        private SplitContainer splitContainer1;
+        private SplitContainer splitContainer2;
     }
 }
