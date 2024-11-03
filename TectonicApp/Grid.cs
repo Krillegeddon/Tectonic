@@ -257,7 +257,7 @@ namespace TectonicApp
 
         internal void APairWillChokeAllAdjacentCells()
         {
-            foreach (var s in Squares.Where(p => p.ValidNumbers.Count == 2).ToList())
+            foreach (var s in Squares.Where(p => p.ValidNumbers.Count == 2 && p.Number == 0).ToList())
             {
                 var pairs = new List<Square>();
 

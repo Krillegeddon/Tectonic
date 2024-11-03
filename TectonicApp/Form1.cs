@@ -152,7 +152,7 @@ namespace TectonicApp
             Remove();
             _grid.SetBecauseOnlySquareInAreaHavingThisNumber();
             Remove();
-            //_grid.APairWillChokeAllAdjacentCells();
+            _grid.APairWillChokeAllAdjacentCells();
             Repaint();
         }
 
