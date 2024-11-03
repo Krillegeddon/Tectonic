@@ -268,7 +268,7 @@
             // 
             // buttonAPairWillChokeAllAdjacentCells
             // 
-            buttonAPairWillChokeAllAdjacentCells.Location = new Point(882, 222);
+            buttonAPairWillChokeAllAdjacentCells.Location = new Point(843, 224);
             buttonAPairWillChokeAllAdjacentCells.Name = "buttonAPairWillChokeAllAdjacentCells";
             buttonAPairWillChokeAllAdjacentCells.Size = new Size(201, 40);
             buttonAPairWillChokeAllAdjacentCells.TabIndex = 26;

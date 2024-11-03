@@ -140,7 +140,6 @@ namespace TectonicApp
                 _grid.RemoveOptionsBasedOnAdjecantKnownNumbers();
                 _grid.RemoveOptionsBasedOnHavingKnownValueInSameArea();
                 _grid.RemoveOptionsOneNumberInAnAreaChokesAdjacentCellsInOtherAreas();
-                //_grid.APairWillChokeAllAdjacentCells();
             }
         }
 
@@ -152,6 +151,8 @@ namespace TectonicApp
             _grid.SetBasedOnOnlyOption();
             Remove();
             _grid.SetBecauseOnlySquareInAreaHavingThisNumber();
+            Remove();
+            //_grid.APairWillChokeAllAdjacentCells();
             Repaint();
         }
 
