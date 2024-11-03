@@ -27,7 +27,7 @@ namespace TectonicApp
             X = x;
             Y = y;
             Number = 0;
-            ValidNumbers = new List<int> { 1, 2, 3, 4, 5 };
+            ValidNumbers = new List<int> { 1, 2, 3, 4, 5, 6, 7 };
         }
 
         public Square(Grid grid, int areaIndex, int x, int y, int knownNumber)
@@ -36,7 +36,7 @@ namespace TectonicApp
             X = x;
             Y = y;
             Number = knownNumber;
-            ValidNumbers = new List<int> { 1, 2, 3, 4, 5 };
+            ValidNumbers = new List<int> { 1, 2, 3, 4, 5, 6, 7 };
         }
 
     }

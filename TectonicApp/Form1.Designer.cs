@@ -56,7 +56,8 @@
             // 
             // tableGrid
             // 
-            tableGrid.ColumnCount = 13;
+            tableGrid.ColumnCount = 14;
+            tableGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
             tableGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
             tableGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
             tableGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
@@ -72,7 +73,7 @@
             tableGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
             tableGrid.Location = new Point(32, 126);
             tableGrid.Name = "tableGrid";
-            tableGrid.RowCount = 12;
+            tableGrid.RowCount = 14;
             tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
             tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
             tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
@@ -85,7 +86,9 @@
             tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
             tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
             tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
-            tableGrid.Size = new Size(788, 712);
+            tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
+            tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
+            tableGrid.Size = new Size(847, 844);
             tableGrid.TabIndex = 5;
             // 
             // labelDebug
@@ -280,7 +283,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1095, 836);
+            ClientSize = new Size(1095, 982);
             Controls.Add(buttonAPairWillChokeAllAdjacentCells);
             Controls.Add(buttonLoad);
             Controls.Add(buttonSave);

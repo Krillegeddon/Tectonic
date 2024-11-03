@@ -96,11 +96,6 @@ namespace TectonicApp
         {
             foreach (var s in Squares)
             {
-                if (s.X == 7 && s.Y == 5)
-                {
-                    int bb = 9;
-                }
-
                 if (s.Number > 0)
                     continue;
                 var knowns = GetKnownNumberAdjecent(s.X, s.Y);
@@ -157,7 +152,7 @@ namespace TectonicApp
             {
                 var squares = GetSquaresInArea(areaIndex).Where(p=>p.Number == 0).ToList();
 
-                for (int i = 0; i <= 5; i++)
+                for (int i = 0; i <= 9; i++)
                 {
                     var squaresHavingIAsValidNumber = new List<Square>();
                     foreach (var s in squares)
@@ -220,18 +215,11 @@ namespace TectonicApp
 
         internal void RemoveOptionsOneNumberInAnAreaChokesAdjacentCellsInOtherAreas()
         {
-            for (int i = 1; i <= 5; i++)
+            for (int i = 1; i <= 9; i++)
             {
                 foreach (var areaIndex in GetAreaIndexes())
                 {
                     var ssx = GetSquaresInArea(areaIndex);
-                    foreach (var ss in ssx)
-                    {
-                        if (ss.X == 5 && ss.Y == 4)
-                        {
-                            int bbb = 9;
-                        }
-                    }
 
                     // Get one area at the time... and see which cells have the number i.
                     var squaresInMyAreaWithIAsAvailable = GetSquaresInArea(areaIndex).Where(p=>p.Number ==0 && p.ValidNumbers.Contains(i)).ToList();
@@ -240,9 +228,7 @@ namespace TectonicApp
                     {
                         adj.ValidNumbers.Remove(i);
                     }
-
                 }
-
             }
         }
 

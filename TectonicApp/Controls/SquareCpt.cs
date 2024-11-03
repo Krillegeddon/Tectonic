@@ -40,6 +40,8 @@ namespace TectonicApp.Controls
             this.label3.MouseMove += Mouse_Over;
             this.label4.MouseMove += Mouse_Over;
             this.label5.MouseMove += Mouse_Over;
+            this.label6.MouseMove += Mouse_Over;
+            this.label7.MouseMove += Mouse_Over;
             this.labelX.MouseMove += Mouse_Over;
             this.MouseClick += Square_MouseClick;
             this.label1.MouseClick += Square_MouseClick;
@@ -47,6 +49,8 @@ namespace TectonicApp.Controls
             this.label3.MouseClick += Square_MouseClick;
             this.label4.MouseClick += Square_MouseClick;
             this.label5.MouseClick += Square_MouseClick;
+            this.label6.MouseClick += Square_MouseClick;
+            this.label7.MouseClick += Square_MouseClick;
             this.labelX.MouseClick += Square_MouseClick;
         }
 
@@ -66,6 +70,8 @@ namespace TectonicApp.Controls
                 label3.Visible = false;
                 label4.Visible = false;
                 label5.Visible = false;
+                label6.Visible = false;
+                label7.Visible = false;
                 return;
             }
 
@@ -75,12 +81,18 @@ namespace TectonicApp.Controls
             label3.Visible = _square.ValidNumbers.Contains(3);
             label4.Visible = _square.ValidNumbers.Contains(4);
             label5.Visible = _square.ValidNumbers.Contains(5);
+            label6.Visible = _square.ValidNumbers.Contains(6);
+            label7.Visible = _square.ValidNumbers.Contains(7);
         }
 
         private void Square_MouseClick(object? sender, MouseEventArgs e)
         {
-            _square.Number = int.Parse(_masterForm.textBoxNumber.Text);
-            Repaint();
+            int num;
+            if (int.TryParse(_masterForm.textBoxNumber.Text, out num))
+            {
+                _square.Number = num;
+                Repaint();
+            }
         }
 
         public void Mouse_Over(object sender, EventArgs e)

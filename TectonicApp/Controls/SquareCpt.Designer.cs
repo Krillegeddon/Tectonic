@@ -34,6 +34,8 @@
             label4 = new Label();
             label5 = new Label();
             labelX = new Label();
+            label6 = new Label();
+            label7 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -85,23 +87,43 @@
             // 
             labelX.AutoSize = true;
             labelX.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            labelX.Location = new Point(5, 1);
+            labelX.Location = new Point(3, 1);
             labelX.Name = "labelX";
             labelX.Size = new Size(47, 54);
             labelX.TabIndex = 5;
             labelX.Text = "X";
             // 
-            // UserControl1
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(0, 20);
+            label6.Name = "label6";
+            label6.Size = new Size(13, 15);
+            label6.TabIndex = 6;
+            label6.Text = "6";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(39, 20);
+            label7.Name = "label7";
+            label7.Size = new Size(13, 15);
+            label7.TabIndex = 7;
+            label7.Text = "7";
+            // 
+            // SquareCpt
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(labelX);
+            Controls.Add(label7);
+            Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "UserControl1";
+            Controls.Add(labelX);
+            Name = "SquareCpt";
             Size = new Size(55, 55);
             ResumeLayout(false);
             PerformLayout();
@@ -115,5 +137,7 @@
         private Label label4;
         private Label label5;
         private Label labelX;
+        private Label label6;
+        private Label label7;
     }
 }
