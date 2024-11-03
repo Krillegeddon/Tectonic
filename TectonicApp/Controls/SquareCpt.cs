@@ -57,7 +57,7 @@ namespace TectonicApp.Controls
         public void Repaint()
         {
             if (_square.AreaIndex >= 0)
-                this.BackColor = _masterForm._colors[_square.AreaIndex];
+                this.BackColor = _masterForm.GetColor(_square.AreaIndex);
             else
                 this.BackColor = Color.White;
 

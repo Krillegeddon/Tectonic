@@ -17,45 +17,16 @@ namespace TectonicApp
 
         public List<Color> _colors = new List<Color>
         {
-            Color.LightBlue, Color.Pink, Color.LightGreen, Color.LightGray,
-            Color.Beige, Color.Bisque,
-            Color.LightBlue, Color.Pink, Color.LightGreen, Color.LightGray,
-            Color.Beige, Color.Bisque,
-            Color.LightBlue, Color.Pink, Color.LightGreen, Color.LightGray,
-            Color.Beige, Color.Bisque,
-            Color.LightBlue, Color.Pink, Color.LightGreen, Color.LightGray,
-            Color.Beige, Color.Bisque,
-            Color.LightBlue, Color.Pink, Color.LightGreen, Color.LightGray,
-            Color.Beige, Color.Bisque,
-            Color.LightBlue, Color.Pink, Color.LightGreen, Color.LightGray,
-            Color.Beige, Color.Bisque,
-            Color.LightBlue, Color.Pink, Color.LightGreen, Color.LightGray,
-            Color.Beige, Color.Bisque,
-            Color.LightBlue, Color.Pink, Color.LightGreen, Color.LightGray,
-            Color.Beige, Color.Bisque,
-            Color.LightBlue, Color.Pink, Color.LightGreen, Color.LightGray,
-            Color.Beige, Color.Bisque,
-            Color.LightBlue, Color.Pink, Color.LightGreen, Color.LightGray,
-            Color.Beige, Color.Bisque,
-            Color.LightBlue, Color.Pink, Color.LightGreen, Color.LightGray,
-            Color.Beige, Color.Bisque,
-            Color.LightBlue, Color.Pink, Color.LightGreen, Color.LightGray,
-            Color.Beige, Color.Bisque,
-            Color.LightBlue, Color.Pink, Color.LightGreen, Color.LightGray,
-            Color.Beige, Color.Bisque,
-            Color.LightBlue, Color.Pink, Color.LightGreen, Color.LightGray,
-            Color.Beige, Color.Bisque,
-            Color.LightBlue, Color.Pink, Color.LightGreen, Color.LightGray,
-            Color.Beige, Color.Bisque,
-            Color.LightBlue, Color.Pink, Color.LightGreen, Color.LightGray,
-            Color.Beige, Color.Bisque,
-            Color.LightBlue, Color.Pink, Color.LightGreen, Color.LightGray,
-            Color.Beige, Color.Bisque,
-            Color.LightBlue, Color.Pink, Color.LightGreen, Color.LightGray,
-            Color.Beige, Color.Bisque,
+            Color.LightBlue, Color.Pink, Color.LightGreen, Color.LightGray, Color.Azure,
+            Color.Purple, Color.LightCoral, Color.Yellow, Color.Orange,
         };
 
         public List<SquareCpt> _squareComponents = new List<SquareCpt>();
+
+        public Color GetColor(int index)
+        {
+            return _colors[index % _colors.Count];
+        }
 
         public void AddSquare(int x, int y, SquareCpt sq)
         {
@@ -65,16 +36,16 @@ namespace TectonicApp
                 {
                     _areaIndex++;
                     _isAddingSquares = true;
-                    labelNextColor.BackColor = _colors[_areaIndex];
+                    labelNextColor.BackColor = GetColor(_areaIndex);
                 }
 
                 labelDebug.Text = $"{x}, {y}";
-                sq.SetGroup(_colors[_areaIndex], _areaIndex);
+                sq.SetGroup(GetColor(_areaIndex), _areaIndex);
             }
             else
             {
                 _isAddingSquares = false;
-                labelNextColor.BackColor = _colors[_areaIndex + 1];
+                labelNextColor.BackColor = GetColor(_areaIndex + 1);
 
             }
         }
@@ -83,7 +54,15 @@ namespace TectonicApp
         {
             foreach (var cc in _squareComponents)
             {
+                cc.SuspendLayout();
+            }
+            foreach (var cc in _squareComponents)
+            {
                 cc.Repaint();
+            }
+            foreach (var cc in _squareComponents)
+            {
+                cc.ResumeLayout();
             }
         }
 
@@ -94,7 +73,7 @@ namespace TectonicApp
         private void button1_Click(object sender, EventArgs e)
         {
             _areaIndex++;
-            labelNextColor.BackColor = _colors[_areaIndex + 1];
+            labelNextColor.BackColor = GetColor(_areaIndex + 1);
         }
 
         private void buttonAreaCount_Click(object sender, EventArgs e)
@@ -165,21 +144,17 @@ namespace TectonicApp
 
         private void SetupGrid()
         {
-            // Förutsätter att TableLayoutPanel redan finns, t.ex. 'tableLayoutPanel1'
             tableGrid.RowCount = _grid.Height;
             tableGrid.ColumnCount = _grid.Width;
 
-            // Rensa befintliga rader och kolumner om några finns
             tableGrid.RowStyles.Clear();
             tableGrid.ColumnStyles.Clear();
 
-            // Lägg till kolumner
             for (int i = 0; i < tableGrid.ColumnCount; i++)
             {
                 tableGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F)); // 60 pixels wide
             }
 
-            // Lägg till rader
             for (int i = 0; i < tableGrid.RowCount; i++)
             {
                 tableGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F)); // 60 pixels high
@@ -196,9 +171,9 @@ namespace TectonicApp
                     cc.Dock = DockStyle.Fill;
                     tableGrid.Controls.Add(cc, x, y);
                     _squareComponents.Add(cc);
-                    cc.Repaint();
                 }
             }
+            Repaint();
         }
 
         private void buttonCreateBoard_Click(object sender, EventArgs e)
