@@ -52,6 +52,7 @@
             buttonLoad = new Button();
             buttonAPairWillChokeAllAdjacentCells = new Button();
             panel1 = new Panel();
+            buttonRemoveAPairWillChokeAllCelsInSameArea = new Button();
             panel2 = new Panel();
             splitContainer1 = new SplitContainer();
             splitContainer2 = new SplitContainer();
@@ -100,16 +101,18 @@
             // 
             // button1
             // 
+            button1.BackColor = SystemColors.ControlDarkDark;
             button1.Location = new Point(80, 51);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 8;
             button1.Text = "Skip color";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // textBoxNumber
             // 
+            textBoxNumber.BackColor = SystemColors.ControlDarkDark;
             textBoxNumber.Location = new Point(440, 51);
             textBoxNumber.Name = "textBoxNumber";
             textBoxNumber.Size = new Size(35, 23);
@@ -117,72 +120,79 @@
             // 
             // buttonAreaCount
             // 
+            buttonAreaCount.BackColor = SystemColors.ControlDarkDark;
             buttonAreaCount.Location = new Point(3, 44);
             buttonAreaCount.Name = "buttonAreaCount";
             buttonAreaCount.Size = new Size(202, 27);
             buttonAreaCount.TabIndex = 10;
             buttonAreaCount.Text = "Remove area.count()";
-            buttonAreaCount.UseVisualStyleBackColor = true;
+            buttonAreaCount.UseVisualStyleBackColor = false;
             buttonAreaCount.Click += buttonAreaCount_Click;
             // 
             // buttonAdjacent
             // 
+            buttonAdjacent.BackColor = SystemColors.ControlDarkDark;
             buttonAdjacent.Location = new Point(4, 75);
             buttonAdjacent.Name = "buttonAdjacent";
             buttonAdjacent.Size = new Size(201, 23);
             buttonAdjacent.TabIndex = 11;
             buttonAdjacent.Text = "Remove adjacent";
-            buttonAdjacent.UseVisualStyleBackColor = true;
+            buttonAdjacent.UseVisualStyleBackColor = false;
             buttonAdjacent.Click += buttonAdjacent_Click;
             // 
             // buttonRemoveSameArea
             // 
+            buttonRemoveSameArea.BackColor = SystemColors.ControlDarkDark;
             buttonRemoveSameArea.Location = new Point(4, 104);
             buttonRemoveSameArea.Name = "buttonRemoveSameArea";
             buttonRemoveSameArea.Size = new Size(201, 23);
             buttonRemoveSameArea.TabIndex = 12;
             buttonRemoveSameArea.Text = "Remove same area";
-            buttonRemoveSameArea.UseVisualStyleBackColor = true;
+            buttonRemoveSameArea.UseVisualStyleBackColor = false;
             buttonRemoveSameArea.Click += buttonRemoveSameArea_Click;
             // 
             // buttonSetOnlyOption
             // 
-            buttonSetOnlyOption.Location = new Point(6, 264);
+            buttonSetOnlyOption.BackColor = SystemColors.ControlDarkDark;
+            buttonSetOnlyOption.Location = new Point(5, 315);
             buttonSetOnlyOption.Name = "buttonSetOnlyOption";
             buttonSetOnlyOption.Size = new Size(199, 23);
             buttonSetOnlyOption.TabIndex = 13;
             buttonSetOnlyOption.Text = "Set based on only option";
-            buttonSetOnlyOption.UseVisualStyleBackColor = true;
+            buttonSetOnlyOption.UseVisualStyleBackColor = false;
             buttonSetOnlyOption.Click += buttonSetOnlyOption_Click;
             // 
             // buttonSetOnlySqInAreaHavingThisNumber
             // 
-            buttonSetOnlySqInAreaHavingThisNumber.Location = new Point(7, 293);
+            buttonSetOnlySqInAreaHavingThisNumber.BackColor = SystemColors.ControlDarkDark;
+            buttonSetOnlySqInAreaHavingThisNumber.Location = new Point(6, 344);
             buttonSetOnlySqInAreaHavingThisNumber.Name = "buttonSetOnlySqInAreaHavingThisNumber";
             buttonSetOnlySqInAreaHavingThisNumber.Size = new Size(198, 41);
             buttonSetOnlySqInAreaHavingThisNumber.TabIndex = 15;
             buttonSetOnlySqInAreaHavingThisNumber.Text = "Set because only one square has this number in an area";
-            buttonSetOnlySqInAreaHavingThisNumber.UseVisualStyleBackColor = true;
+            buttonSetOnlySqInAreaHavingThisNumber.UseVisualStyleBackColor = false;
             buttonSetOnlySqInAreaHavingThisNumber.Click += buttonSetOnlySqInAreaHavingThisNumber_Click;
             // 
             // buttonOneNumberInAnAreaChokesAdjacentCellsInOtherAreas
             // 
+            buttonOneNumberInAnAreaChokesAdjacentCellsInOtherAreas.BackColor = SystemColors.ControlDarkDark;
             buttonOneNumberInAnAreaChokesAdjacentCellsInOtherAreas.Location = new Point(3, 133);
             buttonOneNumberInAnAreaChokesAdjacentCellsInOtherAreas.Name = "buttonOneNumberInAnAreaChokesAdjacentCellsInOtherAreas";
             buttonOneNumberInAnAreaChokesAdjacentCellsInOtherAreas.Size = new Size(202, 41);
             buttonOneNumberInAnAreaChokesAdjacentCellsInOtherAreas.TabIndex = 16;
             buttonOneNumberInAnAreaChokesAdjacentCellsInOtherAreas.Text = "Remove - one number in an area chokes adjacent cells in other areas";
-            buttonOneNumberInAnAreaChokesAdjacentCellsInOtherAreas.UseVisualStyleBackColor = true;
+            buttonOneNumberInAnAreaChokesAdjacentCellsInOtherAreas.UseVisualStyleBackColor = false;
             buttonOneNumberInAnAreaChokesAdjacentCellsInOtherAreas.Click += buttonOneNumberInAnAreaChokesAdjacentCellsInOtherAreas_Click;
             // 
             // buttonRunOne
             // 
+            buttonRunOne.BackColor = SystemColors.ControlDarkDark;
             buttonRunOne.Location = new Point(3, 3);
             buttonRunOne.Name = "buttonRunOne";
             buttonRunOne.Size = new Size(75, 23);
             buttonRunOne.TabIndex = 17;
             buttonRunOne.Text = "Run One";
-            buttonRunOne.UseVisualStyleBackColor = true;
+            buttonRunOne.UseVisualStyleBackColor = false;
             buttonRunOne.Click += buttonRunOne_Click;
             // 
             // label1
@@ -205,6 +215,7 @@
             // 
             // textBoxWidth
             // 
+            textBoxWidth.BackColor = SystemColors.ControlDarkDark;
             textBoxWidth.Location = new Point(64, 18);
             textBoxWidth.Name = "textBoxWidth";
             textBoxWidth.Size = new Size(35, 23);
@@ -222,6 +233,7 @@
             // 
             // textBoxHeight
             // 
+            textBoxHeight.BackColor = SystemColors.ControlDarkDark;
             textBoxHeight.Location = new Point(161, 18);
             textBoxHeight.Name = "textBoxHeight";
             textBoxHeight.Size = new Size(35, 23);
@@ -230,46 +242,51 @@
             // 
             // buttonCreateBoard
             // 
+            buttonCreateBoard.BackColor = SystemColors.ControlDarkDark;
             buttonCreateBoard.Location = new Point(222, 18);
             buttonCreateBoard.Name = "buttonCreateBoard";
             buttonCreateBoard.Size = new Size(91, 23);
             buttonCreateBoard.TabIndex = 23;
             buttonCreateBoard.Text = "Create board";
-            buttonCreateBoard.UseVisualStyleBackColor = true;
+            buttonCreateBoard.UseVisualStyleBackColor = false;
             buttonCreateBoard.Click += buttonCreateBoard_Click;
             // 
             // buttonSave
             // 
+            buttonSave.BackColor = SystemColors.ControlDarkDark;
             buttonSave.Location = new Point(655, 18);
             buttonSave.Name = "buttonSave";
             buttonSave.Size = new Size(75, 23);
             buttonSave.TabIndex = 24;
             buttonSave.Text = "Save";
-            buttonSave.UseVisualStyleBackColor = true;
+            buttonSave.UseVisualStyleBackColor = false;
             buttonSave.Click += buttonSave_Click;
             // 
             // buttonLoad
             // 
+            buttonLoad.BackColor = SystemColors.ControlDarkDark;
             buttonLoad.Location = new Point(655, 47);
             buttonLoad.Name = "buttonLoad";
             buttonLoad.Size = new Size(75, 23);
             buttonLoad.TabIndex = 25;
             buttonLoad.Text = "Load";
-            buttonLoad.UseVisualStyleBackColor = true;
+            buttonLoad.UseVisualStyleBackColor = false;
             buttonLoad.Click += buttonLoad_Click;
             // 
             // buttonAPairWillChokeAllAdjacentCells
             // 
+            buttonAPairWillChokeAllAdjacentCells.BackColor = SystemColors.ControlDarkDark;
             buttonAPairWillChokeAllAdjacentCells.Location = new Point(3, 180);
             buttonAPairWillChokeAllAdjacentCells.Name = "buttonAPairWillChokeAllAdjacentCells";
             buttonAPairWillChokeAllAdjacentCells.Size = new Size(201, 40);
             buttonAPairWillChokeAllAdjacentCells.TabIndex = 26;
             buttonAPairWillChokeAllAdjacentCells.Text = "Remove - a pair will choke all adjacent cells";
-            buttonAPairWillChokeAllAdjacentCells.UseVisualStyleBackColor = true;
+            buttonAPairWillChokeAllAdjacentCells.UseVisualStyleBackColor = false;
             buttonAPairWillChokeAllAdjacentCells.Click += buttonAPairWillChokeAllAdjacentCells_Click;
             // 
             // panel1
             // 
+            panel1.Controls.Add(buttonRemoveAPairWillChokeAllCelsInSameArea);
             panel1.Controls.Add(buttonRunOne);
             panel1.Controls.Add(buttonAPairWillChokeAllAdjacentCells);
             panel1.Controls.Add(buttonAreaCount);
@@ -283,6 +300,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(242, 887);
             panel1.TabIndex = 28;
+            // 
+            // buttonRemoveAPairWillChokeAllCelsInSameArea
+            // 
+            buttonRemoveAPairWillChokeAllCelsInSameArea.BackColor = SystemColors.ControlDarkDark;
+            buttonRemoveAPairWillChokeAllCelsInSameArea.Location = new Point(4, 226);
+            buttonRemoveAPairWillChokeAllCelsInSameArea.Name = "buttonRemoveAPairWillChokeAllCelsInSameArea";
+            buttonRemoveAPairWillChokeAllCelsInSameArea.Size = new Size(201, 40);
+            buttonRemoveAPairWillChokeAllCelsInSameArea.TabIndex = 27;
+            buttonRemoveAPairWillChokeAllCelsInSameArea.Text = "Remove - a pair will choke all cells in same area";
+            buttonRemoveAPairWillChokeAllCelsInSameArea.UseVisualStyleBackColor = false;
+            buttonRemoveAPairWillChokeAllCelsInSameArea.Click += buttonRemoveAPairWillChokeAllCelsInSameArea_Click;
             // 
             // panel2
             // 
@@ -343,6 +371,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.WindowFrame;
             ClientSize = new Size(1095, 982);
             Controls.Add(splitContainer2);
             Name = "Form1";
@@ -390,5 +419,6 @@
         private Panel panel2;
         private SplitContainer splitContainer1;
         private SplitContainer splitContainer2;
+        private Button buttonRemoveAPairWillChokeAllCelsInSameArea;
     }
 }

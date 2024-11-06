@@ -134,6 +134,8 @@ namespace TectonicApp
             Remove();
             _grid.APairWillChokeAllAdjacentCells();
             Repaint();
+            _grid.APairWillChokeAllCellsInSameArea();
+            Repaint();
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
@@ -191,6 +193,12 @@ namespace TectonicApp
         private void buttonAPairWillChokeAllAdjacentCells_Click(object sender, EventArgs e)
         {
             _grid.APairWillChokeAllAdjacentCells();
+            Repaint();
+        }
+
+        private void buttonRemoveAPairWillChokeAllCelsInSameArea_Click(object sender, EventArgs e)
+        {
+            _grid.APairWillChokeAllCellsInSameArea();
             Repaint();
         }
     }

@@ -53,11 +53,10 @@ namespace TectonicApp
             if (x < 0 || y < 0 || x >= Width || y >= Height)
             {
                 return null;
+                //throw new Exception($"No square at x: {x}, y: {y}");
             }
 
-            var l = Squares.Where(p => p.X == x && p.Y == y).ToList();
-
-            return Squares.Where(p => p.X == x && p.Y == y).SingleOrDefault();
+            return Squares.Where(p => p.X == x && p.Y == y).Single();
         }
 
         private int GetKnownNumber(int x, int y)
@@ -281,7 +280,52 @@ namespace TectonicApp
                     }
                 }
             }
+        }
+
+
+        internal void APairWillChokeAllCellsInSameArea()
+        {
+            foreach (var s in Squares.Where(p => p.ValidNumbers.Count == 2 && p.Number == 0).ToList())
+            {
+                if (s.X == 3 && s.Y == 1)
+                {
+                    int bb = 9;
+                }
+
+                var pairs = new List<Square>();
+
+                var adjs = GetSquaresInArea(s.AreaIndex).Where(p => p != null && p.Number == 0 && !(p.X == s.X && p.Y == s.Y)).ToList();
+                foreach (var adj in adjs)
+                {
+                    if (adj.ValidNumbers.Count != s.ValidNumbers.Count)
+                        continue;
+                    for (var ix = 0; ix < s.ValidNumbers.Count; ix++)
+                    {
+                        if (adj.ValidNumbers[ix] != s.ValidNumbers[ix])
+                            goto notSame;
+                    }
+
+                    // We have a pair! Let's check all adjacent cells to these guys and remove these two numbers!
+                    pairs.Add(adj);
+
+                notSame:
+                    int bb = 9;
+                }
+
+                if (pairs.Count != 1)
+                    continue;
+
+
+                var othersInSameArea = GetSquaresInArea(s.AreaIndex).Where(p => p != null && p.Number == 0 && !(p.X == s.X && p.Y == s.Y) && !(p.X == pairs[0].X && p.Y == pairs[0].Y)).ToList();
+                foreach (var ss in othersInSameArea)
+                {
+                    RemoveOptionsFromSquare(ss, s.ValidNumbers);
+                }
+            }
 
         }
+
+
+
     }
 }
