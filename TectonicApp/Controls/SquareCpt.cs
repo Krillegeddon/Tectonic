@@ -87,10 +87,17 @@ namespace TectonicApp.Controls
 
         private void Square_MouseClick(object? sender, MouseEventArgs e)
         {
-            int num;
+            int num; 
             if (int.TryParse(_masterForm.textBoxNumber.Text, out num))
             {
                 _square.Number = num;
+                Repaint();
+            }
+
+            if (int.TryParse(_masterForm.textBoxValidNumber.Text, out num))
+            {
+                if (_square.ValidNumbers.Contains(num))
+                    _square.ValidNumbers.Remove(num);
                 Repaint();
             }
         }

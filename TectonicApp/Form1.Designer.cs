@@ -56,6 +56,8 @@
             panel2 = new Panel();
             splitContainer1 = new SplitContainer();
             splitContainer2 = new SplitContainer();
+            textBoxValidNumber = new TextBox();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -113,7 +115,7 @@
             // textBoxNumber
             // 
             textBoxNumber.BackColor = SystemColors.ControlDarkDark;
-            textBoxNumber.Location = new Point(440, 51);
+            textBoxNumber.Location = new Point(558, 15);
             textBoxNumber.Name = "textBoxNumber";
             textBoxNumber.Size = new Size(35, 23);
             textBoxNumber.TabIndex = 9;
@@ -198,7 +200,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(196, 55);
+            label1.Location = new Point(319, 18);
             label1.Name = "label1";
             label1.Size = new Size(238, 15);
             label1.TabIndex = 18;
@@ -314,6 +316,8 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(textBoxValidNumber);
+            panel2.Controls.Add(label4);
             panel2.Controls.Add(buttonLoad);
             panel2.Controls.Add(labelDebug);
             panel2.Controls.Add(labelNextColor);
@@ -366,6 +370,25 @@
             splitContainer2.Size = new Size(1095, 982);
             splitContainer2.SplitterDistance = 91;
             splitContainer2.TabIndex = 31;
+            // 
+            // textBoxValidNumber
+            // 
+            textBoxValidNumber.BackColor = SystemColors.ControlDarkDark;
+            textBoxValidNumber.Location = new Point(558, 44);
+            textBoxValidNumber.Name = "textBoxValidNumber";
+            textBoxValidNumber.Size = new Size(35, 23);
+            textBoxValidNumber.TabIndex = 26;
+            textBoxValidNumber.TextChanged += textBox1_TextChanged;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(319, 47);
+            label4.Name = "label4";
+            label4.Size = new Size(218, 15);
+            label4.TabIndex = 27;
+            label4.Text = "Remove valid value (click in the grid to):";
+            label4.Click += label4_Click;
             // 
             // Form1
             // 
@@ -420,5 +443,7 @@
         private SplitContainer splitContainer1;
         private SplitContainer splitContainer2;
         private Button buttonRemoveAPairWillChokeAllCelsInSameArea;
+        public TextBox textBoxValidNumber;
+        private Label label4;
     }
 }
